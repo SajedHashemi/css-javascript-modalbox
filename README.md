@@ -47,11 +47,11 @@ And put the following line of javascript code at the end of the file and after t
 </html>
 ```
 **Note**: The syntax related to the definition of the elements is as follows:
-```javascript
-[{selector:'selector string',value:'value of selector'},{...},{...},...]
-```
+
+> [{selector:'selector string',value:'value of selector'},{...},{...},...]
+
 #### Example:
-```javascript
-[{selector:'.at-item',value:'Modal'}]
-```
+
+> [{selector:'.at-item',value:'Modal'}]
+
 ### Thank you
