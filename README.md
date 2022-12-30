@@ -9,7 +9,7 @@ And put the following line of javascript code at the end of the file and after t
 ```html
 <script src="modalBox.js"></script>
 ```
-**Note**: The path of the file should be changed relative to the storage address of the css file in the project.
+**Note**: The path of the file should be changed relative to the storage address of the css/js file in the project.
 
 #### Example:
 ```html
