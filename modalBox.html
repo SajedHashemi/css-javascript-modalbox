@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Message Box Demo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/css/modalBox.css">
+  <link rel="icon" type="image/x-icon" href="/assets/img/favicon.png">
+  <style>
+    body{
+      text-align: center;
+      background-color: #200020;
+    }
+    .center{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+      width:100%;
+      align-items: center;
+      justify-content: center;
+    }
+    .at-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    .at-item {
+      color: #3079ed; font-weight:bold; font-size:3em;
+      animation-name: focus-in-contract;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-delay: 0s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-fill-mode: forwards;
+    }
+    @keyframes focus-in-contract {
+      0%{letter-spacing:0.5em;filter:blur(12px);opacity:0;}
+      100%{filter:blur(0);opacity:1;}
+    }
+    .btn{
+      background-color: #100010;
+      border: 2px dashed #5e4ecb;
+      box-shadow: 0px 0px 10px 2px #5e4ecb7f;
+      border-radius:20px;
+      color:white;
+      padding: 20px;
+      line-height:0px;
+    }
+    .btn:hover{
+      cursor: pointer;
+      background-color: #fff2;
+    }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <button class="btn" onclick="modalBox('modalbox1',[],0)">Open Modal</button>
+  </div>
+  <div class="modal-box" id="modalbox1" style="">
+    <div class="modal-box-header">Title</div>
+    <div class="modal-box-content">
+      <div class='at-container'>
+        <div class='at-item' >Modal</div>
+      </div>
+    </div>
+    <div class="modal-box-footer">
+      <div class="modal-box-btns n1">
+        <button onclick="modalBoxHideByElement(this)">Close</button>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="assets/js/modalBox.js"></script>
+</html>
