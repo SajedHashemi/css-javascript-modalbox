@@ -7,7 +7,21 @@ function modalBox(id, opt=[], timeout=0){
   var contents = elem.innerHTML;
   elem.innerHTML = '<div class="modal-box-body"><span style="float: right; margin: 6px 6px;" onclick="modalBoxHide(\''+id+'\')">'+_X_icon+'</span>'+contents+'</div>';
   opt.forEach((item) => {
-    elem.querySelector(item.selector).value = item.value;
+    var el = elem.querySelector(item.selector);
+    //console.log("selector:"+item.selector+" -> type:"+el.type+" -> value:"+item.value);
+    if(el.type=="checkbox"){
+      el.checked = ((item.value=="false" || item.value=="0")?false:true);
+    }else if(el.type=="radio"){
+      el = document.querySelectorAll(item.selector);
+      el.forEach((r)=>{
+        if(r.value == item.value) {
+          r.checked = true;
+        }
+      });
+    }else if(el.type==undefined)
+      el.innerHTML = item.value;
+    else
+      el.value = item.value;
   });
   modalBoxShow(id, timeout);
 }
